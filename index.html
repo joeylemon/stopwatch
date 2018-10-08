@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Professor Higginbotham's Stopwatch</title>
+        <link rel="icon" type="img/ico" href="images/stopwatch.png">
+        <link rel='stylesheet' type='text/css' href='styles/styling.css' />
+    </head>
+    
+    <body>
+        <!-- Navigation bar at top -->
+        <div class="nav">
+            <a href="https://jlemon.org"><img src="images/logo.png"></a>
+            <ul>
+                <li><a href="https://jlemon.org">my website</a></li>
+                <li><a href="https://github.com/joeylemon">github</a></li>
+                <li><a href="mailto:joeyclemon@gmail.com">contact</a></li>
+            </ul>
+        </div>
+        
+        <!-- Stopwatch canvas and controls -->
+        <div class="stopwatch">
+            <div class="button" style="border-color: #1b9927; color: #1b9927;" onclick="begin();"><p>start</p></div>
+            <img src="images/stopwatch.png">
+            <canvas id="canvas"></canvas>
+            <div class="button" style="border-color: #991b1b; color: #991b1b;" onclick="finish();"><p>stop</p></div>
+        </div>
+        
+        <!-- Stopwatch digital representation -->
+        <div class="digital">
+            <p id="digital">00:00:00.00</p>
+        </div>
+        
+        <!-- Reset button at the top-right of the table -->
+        <div class="center">
+            <div class="container">
+                <div class="action" id="last-page" style="float: left;" onclick="lastPage()"><p>&lt;&lt; Page <span id="last"></span></p></div>
+                <div class="action" id="next-page" style="float: right;text-align: right;" onclick="nextPage()"><p>Page <span id="next"></span> &gt;&gt;</p></div>
+                <div class="action reset" id="reset" onclick="reset()"><p>Reset</p></div>
+            </div>
+        </div>
+        
+        <!-- History table -->
+        <table id="data"></table>
+    </body>
+    
+    <!-- Include jquery and scripts -->
+    <script src="js/jquery.js"></script>
+    <script src="js/history.js"></script>
+    <script src="js/main.js"></script>
+</html>
