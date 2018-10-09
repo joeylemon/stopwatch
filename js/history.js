@@ -46,9 +46,9 @@ function updateTable() {
             $("#data").append(`
                 <tr>
                     <td>` + new Date(row.start).toLocaleString() + `</td>
-                    <td><a href="https://www.google.com/maps/search/` + row.startLoc + `" target="_blank">` + row.startLoc + `</a></td>
+                    <td>` + (row.startLoc == "Location blocked" ? row.startLoc : `<a href="https://www.google.com/maps/search/` + row.startLoc + `" target="_blank">` + row.startLoc + `</a>`) + `</td>
                     <td>` + new Date(row.stop).toLocaleString() + `</td>
-                    <td><a href="https://www.google.com/maps/search/` + row.stopLoc + `" target="_blank">` + row.stopLoc + `</a></td>
+                    <td>` + (row.stopLoc == "Location blocked" ? row.stopLoc : `<a href="https://www.google.com/maps/search/` + row.stopLoc + `" target="_blank">` + row.stopLoc + `</a>`) + `</td>
                     <td>` + getDigitalFormat((row.stop + 10) - row.start) + `</td>
                 </tr>
             `);
@@ -57,7 +57,7 @@ function updateTable() {
             $("#data").append(`
                 <tr>
                     <td>` + new Date(row.start).toLocaleString() + `</td>
-                    <td><a href="https://www.google.com/maps/search/` + row.startLoc + `" target="_blank">` + row.startLoc + `</a></td>
+                    <td>` + (row.startLoc == "Location blocked" ? row.startLoc : `<a href="https://www.google.com/maps/search/` + row.startLoc + `" target="_blank">` + row.startLoc + `</a>`) + `</td>
                     <td></td>
                     <td></td>
                     <td></td>
